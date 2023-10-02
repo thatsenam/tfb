@@ -36,21 +36,24 @@ class TenantFrontendBoilerplateServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../resources/views' => resource_path('views/'),
             ], 'views');
+            $this->appendCustomRoutesToWeb();
 
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/tenant-frontend-boilerplate'),
-            ], 'assets');*/
 
-            // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/tenant-frontend-boilerplate'),
-            ], 'lang');*/
-
-            // Registering package commands.
-            // $this->commands([]);
         }
     }
+
+    // In your package's service provider
+    public function appendCustomRoutesToWeb()
+    {
+        $customRoutes = file_get_contents(__DIR__ . '/../routes/routes.php');
+
+        // Get the path to the web.php file
+        $webFilePath = base_path('routes/web.php');
+
+        // Append the custom routes to the web.php file
+        file_put_contents($webFilePath, $customRoutes, FILE_APPEND);
+    }
+
 
     /**
      * Register the application services.
