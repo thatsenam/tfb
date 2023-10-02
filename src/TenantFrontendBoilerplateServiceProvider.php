@@ -11,6 +11,7 @@ class TenantFrontendBoilerplateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+//        dd('hello from package');
         /*
          * Optional methods to load your package assets
          */
@@ -21,13 +22,20 @@ class TenantFrontendBoilerplateServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('tenant-frontend-boilerplate.php'),
+                __DIR__ . '/../config/config.php' => config_path('tenant-frontend-boilerplate.php'),
             ], 'config');
 
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/tenant-frontend-boilerplate'),
-            ], 'views');*/
+            $this->publishes([
+                __DIR__ . '/../Models' => app_path('Models'),
+            ], 'models');
+
+            $this->publishes([
+                __DIR__ . '/../Http/Controllers' => app_path('Http/Controllers'),
+            ], 'controllers');
+
+            $this->publishes([
+                __DIR__ . '/../resources/views' => resource_path('views/'),
+            ], 'views');
 
             // Publishing assets.
             /*$this->publishes([
@@ -50,7 +58,7 @@ class TenantFrontendBoilerplateServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'tenant-frontend-boilerplate');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'tenant-frontend-boilerplate');
 
         // Register the main class to use with the facade
         $this->app->singleton('tenant-frontend-boilerplate', function () {
