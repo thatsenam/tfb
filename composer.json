@@ -15,8 +15,15 @@
             "role": "Developer"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/CleanTalk/php-antispam.git"
+        }
+    ],
     "require": {
         "php": "^7.4|^8.0",
+        "cleantalk/php-antispam": "^2.6",
         "illuminate/support": "^8.0"
     },
     "require-dev": {

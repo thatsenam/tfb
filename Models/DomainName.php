@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Test extends Model
+class DomainName extends Model
 {
+
+
     use HasFactory;
+
+    protected $guarded = [];
 }

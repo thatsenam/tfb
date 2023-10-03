@@ -11,10 +11,7 @@ class TenantFrontendBoilerplateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        dd('hello from package');
-        /*
-         * Optional methods to load your package assets
-         */
+
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'tenant-frontend-boilerplate');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'tenant-frontend-boilerplate');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
