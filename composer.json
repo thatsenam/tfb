@@ -23,7 +23,7 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "cleantalk/php-antispam": "^2.6",
+        "cleantalk/php-antispam": "^2.6"
     },
     "require-dev": {
     },
