@@ -8,6 +8,7 @@
     "homepage": "https://github.com/codeintel/tenant-frontend-boilerplate",
     "license": "MIT",
     "type": "library",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Enam",
