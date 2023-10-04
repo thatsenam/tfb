@@ -1,0 +1,58 @@
+{
+    "name": "codeintel/tenant-frontend-boilerplate",
+    "description": "",
+    "keywords": [
+        "codeintel",
+        "tenant-frontend-boilerplate"
+    ],
+    "homepage": "https://github.com/codeintel/tenant-frontend-boilerplate",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Enam",
+            "email": "enam@codeintel.com",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/CleanTalk/php-antispam.git"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "cleantalk/php-antispam": "^2.6",
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Codeintel\\TenantFrontendBoilerplate\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Codeintel\\TenantFrontendBoilerplate\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codeintel\\TenantFrontendBoilerplate\\TenantFrontendBoilerplateServiceProvider"
+            ],
+            "aliases": {
+                "TenantFrontendBoilerplate": "Codeintel\\TenantFrontendBoilerplate\\TenantFrontendBoilerplateFacade"
+            }
+        }
+    }
+}
